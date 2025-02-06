@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+    
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <small>{{ post.date_posted }}</small>
+    <br>
+    <a href="{% url 'post_update' post.pk %}">Edit</a>
+    <a href="{% url 'post_delete' post.pk %}">Delete</a>
+    <br>
+    <a href="{% url 'post_list' %}">Back to List</a>
+</body>
+</html>
